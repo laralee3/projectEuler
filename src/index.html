@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="<%=appName%>" ng-controller="AppController">
+<head>
+    <title ng-bind="pageTitle"></title>
+
+    <!-- font awesome from BootstrapCDN -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+
+    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+    <script type="text/javascript" src="<%= file %>"></script><% }); %>
+</head>
+<body>
+    <header>
+        <uib-pagination total-items="'2'" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true"></uib-pagination>
+    </header>
+
+    <div class="container" ui-view="main"></div>
+
+    <footer class="container">
+        (c) <%= date %> <%= author %>
+    </footer>
+</body>
+</html>
