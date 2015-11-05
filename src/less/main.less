@@ -5,26 +5,31 @@
 
 //Palette 1
 body {
-  background-color: @color2;
-  color: lighten(@color4, 35%);
+  background-color: darken(@color4, 10%);
+  color: lighten(@color1, 20%);
 
   .euler-button {
+    background-color: darken(@color4, 5%);
     color: @color1;
-    background-color: lighten(@color5, 15%);
-    border-color: @color3;
+    border-color: darken(@color3, 20%);
   }
 
   .modal-content {
-    background-color: @color5;
-    color: lighten(@color4, 35%);
+    background-color: darken(@color4, 10%);
+    color: lighten(@color4, 8%);
 
     .modal-title {
-      color: @color1;
+      color: @color2;
     }
 
     .modal-body {
       pre {
-        background-color: @color4;
+        background-color: darken(@color5, 20%);
+        color: lighten(@color1, 5%);
+      }
+
+      h2 {
+        margin-top: 0px;
       }
     }
   }
