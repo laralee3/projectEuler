@@ -1,16 +1,11 @@
 (function (module) {
-    module.controller('ModalInstanceCtrl', function ($scope, $modalInstance, items) {
-        $scope.items = items;
-        $scope.selected = {
-            item: $scope.items[0]
-        };
+    module.controller('ModalInstanceCtrl', function ($scope, $modalInstance, content) {
+        $scope.id = content.id;
+        $scope.answer = content.answer;
+        $scope.codeString = content.code;
 
-        $scope.ok = function () {
-            $modalInstance.close($scope.selected.item);
-        };
-
-        $scope.cancel = function () {
-            $modalInstance.dismiss('cancel');
+        $scope.close = function () {
+            $modalInstance.close();
         };
     });
 }(angular.module("Modal")));
