@@ -1,4 +1,31 @@
 @import '../../vendor/bootstrap/less/bootstrap.less';
 @import 'variables.less';
 @import '../app/home/home.less';
+@import '../common/Modal/Modal.less';
 
+//Palette 1
+body {
+  background-color: @color2;
+  color: lighten(@color4, 35%);
+
+  .euler-button {
+    color: @color1;
+    background-color: lighten(@color5, 15%);
+    border-color: @color3;
+  }
+
+  .modal-content {
+    background-color: @color5;
+    color: lighten(@color4, 35%);
+
+    .modal-title {
+      color: @color1;
+    }
+
+    .modal-body {
+      pre {
+        background-color: @color4;
+      }
+    }
+  }
+}
