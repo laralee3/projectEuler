@@ -83,7 +83,8 @@ module.exports = function(grunt) {
                 'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
                 'vendor/angular-ui-router/release/angular-ui-router.js',
                 'vendor/angular-ui-utils/modules/route/route.js',
-                'vendor/jquery/dist/jquery.min.js'
+                'vendor/jquery/dist/jquery.min.js',
+                'vendor/lodash/lodash.min.js'
             ],
             css: [
             ],
@@ -269,9 +270,9 @@ module.exports = function(grunt) {
                         cwd: '<%= build_dir %>',
                         dest: '<%= build_dir %>',
                         expand: true
-                    },
+                    }
                 ]
-            },
+            }
         },
 
         /**
@@ -710,7 +711,7 @@ module.exports = function(grunt) {
         // this.data.dir comes from either build:dir, compile:dir, or karmaconfig:dir in the index config defined above
         // see - http://gruntjs.com/api/inside-tasks#this.data for documentation
         grunt.file.copy('src/index.html', this.data.dir + '/index.html', {
-            process: function (contents, path) {
+            process: function (contents) {
                 // These are the variables looped over in our index.html exposed as "scripts", "styles", and "version"
                 return grunt.template.process(contents, {
                     data: {
@@ -733,7 +734,7 @@ module.exports = function(grunt) {
         var jsFiles = filterForJS(this.filesSrc);
 
         grunt.file.copy('karma/karma-unit.tpl.js', grunt.config('build_dir') + '/karma-unit.js', {
-            process: function (contents, path) {
+            process: function (contents) {
                 // This is the variable looped over in the karma template of our index.html exposed as "scripts"
                 return grunt.template.process(contents, {
                     data: {
