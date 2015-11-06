@@ -1,10 +1,11 @@
 <div>
     <h1>Project Euler Solutions</h1>
 
-    <p>My answers to the puzzles at <a href="https://projecteuler.net/">Project Euler</a>. Doing this for fun!</p>
+    <p>My answers to the puzzles at <a href="https://projecteuler.net/">Project Euler</a>, written in Javascript.</p>
+
     <p>
-        <button class="btn btn-primary euler-button" ng-click="open('eulerId0001')">eulerId0001</button>
-        <button class="btn btn-primary euler-button" ng-click="open('eulerId0002')">eulerId0002</button>
-        <button class="btn btn-primary euler-button" ng-click="open('eulerId0003')">eulerId0003</button>
+        <button class="btn btn-primary euler-button" ng-repeat="solution in solutionList" ng-click="open(solution)">{{
+            solution }}
+        </button>
     </p>
 </div>

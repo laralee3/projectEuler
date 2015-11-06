@@ -1,5 +1,12 @@
 (function (module) {
     module.controller('HomeController', function ($scope, $modal) {
+        var totalSolutions = 4; //TODO-Lara: Figure out how to do a file count for solutions
+        $scope.solutionList = [];
+
+        for (var i = 1; i <= totalSolutions; i++) {
+            $scope.solutionList.push('eulerId' + _.padLeft(i, 4, '0'));
+        }
+
         $scope.open = function (solutionId) {
             var solutionData = {};
 
