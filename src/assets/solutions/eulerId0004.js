@@ -3,7 +3,7 @@ var solution = function () {
     var product = 0;
 
     var reverseNumber = function (number) {
-        number = number + '';
+        number = number + ''; // Making the number a string so we can use the array reverse() on it
         return number.split('').reverse().join('');
     };
 
