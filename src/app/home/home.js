@@ -1,6 +1,6 @@
 (function (module) {
     module.controller('HomeController', function ($scope, $modal) {
-        var totalSolutions = 4; //TODO-Lara: Figure out how to do a file count for solutions
+        var totalSolutions = 5; //TODO-Lara: Figure out how to do a file count for solutions
         $scope.solutionList = [];
 
         for (var i = 1; i <= totalSolutions; i++) {
