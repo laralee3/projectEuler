@@ -1,1 +1,3 @@
-(angular.module("modalInstance", []));
+(angular.module("modalInstance", [
+    'prismDirective'
+]));

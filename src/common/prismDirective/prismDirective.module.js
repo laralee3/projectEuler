@@ -1,2 +1,2 @@
-(angular.module("Modal", [
+(angular.module("prismDirective", [
 ]));

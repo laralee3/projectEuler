@@ -1,11 +1,12 @@
 (function (module) {
-    module.controller('ModalInstanceCtrl', function ($scope, $modalInstance, content) {
-        $scope.id = content.id;
-        $scope.answer = content.answer; //TODO-Lara: Add syntax highlighting
-        $scope.codeString = content.code;
-
-        $scope.close = function () {
-            $modalInstance.close();
+    module.directive('prism', function () {
+        return {
+            restrict: 'A',
+            link: function ($scope, element) {
+                element.ready(function () {
+                    Prism.highlightElement(element[0]);
+                });
+            }
         };
     });
-}(angular.module("Modal")));
+}(angular.module("prismDirective")));
