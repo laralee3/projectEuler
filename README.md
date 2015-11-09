@@ -1,4 +1,4 @@
-Simple site that runs and outputs both the answer and the code for a number of different puzzles.
+Simple site that runs and outputs both the answer and the code for a number of different puzzles. Uses prism.hs syntax highlighting.
 
 Puzzles referenced here can be found at https://projecteuler.net/
 
