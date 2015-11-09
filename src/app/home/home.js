@@ -1,6 +1,6 @@
 (function (module) {
     module.controller('HomeController', function ($scope, $modal) {
-        var totalSolutions = 5; //TODO-Lara: Figure out how to do a file count for solutions
+        var totalSolutions = 6; //TODO-Lara: Figure out how to do a file count for solutions
         $scope.solutionList = [];
 
         for (var i = 1; i <= totalSolutions; i++) {
@@ -16,7 +16,7 @@
                 solutionData.answer = solution();
             }).then(function () {
                 $modal.open({
-                    templateUrl: 'Modal/Modal.tpl.html',
+                    templateUrl: 'modalInstance/modalInstance.tpl.html',
                     controller: 'ModalInstanceCtrl',
                     size: 'lg',
                     resolve: {

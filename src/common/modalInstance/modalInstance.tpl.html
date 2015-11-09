@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <h2 class="modal-title">Solution to {{ id }}</h2>
+</div>
+<div class="modal-body language-javascript">
+    <div>
+        <h3>Answer:</h3>
+        <pre class="euler-answer"><code prism>{{ answer }}</code></pre>
+    </div>
+    <div>
+        <h3>Code:</h3>
+        <pre class="euler-answer"><code prism>{{ codeString }}</code></pre>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary euler-button" ng-click="close()">Close</button>
+</div>

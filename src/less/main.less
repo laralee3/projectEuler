@@ -1,35 +1,35 @@
 @import '../../vendor/bootstrap/less/bootstrap.less';
 @import 'variables.less';
 @import '../app/home/home.less';
-@import '../common/Modal/Modal.less';
+@import '../common/modalInstance/modalInstance.less';
+@import '../assets/prism/prism.css';
 
 //Palette 1
 body {
-  background-color: darken(@color4, 7%);
+  background-color: darken(@color5, 10%);
   color: lighten(@color1, 20%);
 
+  .highlight {
+    color: @color2;
+  }
+
   .euler-button {
-    background-color: darken(@color4, 5%);
+    background-color: @color4;
     color: @color1;
-    border-color: darken(@color3, 20%);
+    border-color: @color3;
     margin: 2px;
   }
 
   .modal-content {
-    background-color: darken(@color4, 7%);
-    color: lighten(@color4, 8%);
+    background-color: darken(@color5, 10%);
 
     .modal-title {
       color: @color2;
     }
 
     .modal-body {
-      pre {
-        background-color: darken(@color5, 20%);
-        color: lighten(@color1, 28%);
-      }
-
-      h2 {
+      h3 {
+        color: darken(@color2, 20%);
         margin-top: 0;
       }
     }

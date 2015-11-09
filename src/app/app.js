@@ -17,5 +17,6 @@
     'ui.router.state',
     'ui.router',
     'ui.bootstrap',
-    'Modal'
+    'modalInstance',
+    'prismDirective'
 ])));

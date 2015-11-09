@@ -84,7 +84,9 @@ module.exports = function(grunt) {
                 'vendor/angular-ui-router/release/angular-ui-router.js',
                 'vendor/angular-ui-utils/modules/route/route.js',
                 'vendor/jquery/dist/jquery.min.js',
-                'vendor/lodash/lodash.min.js'
+                'vendor/lodash/lodash.min.js',
+
+                'src/assets/prism/prism.js'
             ],
             css: [
             ],

@@ -23,5 +23,5 @@
 }(angular.module("projectEuler.home", [
     'ui.router',
     'ui.bootstrap',
-    'Modal'
+    'modalInstance'
 ])));
