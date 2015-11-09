@@ -16,7 +16,7 @@
                 solutionData.answer = solution();
             }).then(function () {
                 $modal.open({
-                    templateUrl: 'Modal/Modal.tpl.html',
+                    templateUrl: 'modalInstance/modalInstance.tpl.html',
                     controller: 'ModalInstanceCtrl',
                     size: 'lg',
                     resolve: {
