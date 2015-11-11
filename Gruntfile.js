@@ -90,7 +90,9 @@ module.exports = function(grunt) {
             ],
             css: [
             ],
-            assets: [
+            assets: [],
+            fonts: [
+                'vendor/bootstrap/dist/fonts/*' // For glyphicons
             ]
         }
     };
@@ -192,6 +194,17 @@ module.exports = function(grunt) {
                         dest: '<%= build_dir %>/',
                         cwd: '.',
                         expand: true
+                    }
+                ]
+            },
+            build_vendorfonts: { // TODO-Lara: Clean up Gruntfile to only necessary tasks
+                files: [
+                    {
+                        src: ['<%= vendor_files.fonts %>'],
+                        dest: '<%= build_dir %>/fonts/',
+                        cwd: '.',
+                        expand: true,
+                        flatten: true
                     }
                 ]
             },
@@ -650,8 +663,8 @@ module.exports = function(grunt) {
     grunt.registerTask('build', [
         'clean:all', 'html2js', 'jshint', 'coffeelint', 'coffee', 'less:build',
         'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
-        'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_vendorcss', 'ngAnnotate:build', 'index:build', 'karmaconfig',
-        'karma:continuous'
+        'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_vendorcss', 'copy:build_vendorfonts',
+        'ngAnnotate:build', 'index:build', 'karmaconfig', 'karma:continuous'
     ]);
 
     // just like build, but includes testing resources for using $httpBackend and switches to mock application in index.html
