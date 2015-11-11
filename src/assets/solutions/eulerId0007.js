@@ -1,3 +1,5 @@
+// Based on Sieve of Eratosthenes
+
 var solution = function () {
     var primeDivisors = [2];
     var counter = 1; // # of primes found
