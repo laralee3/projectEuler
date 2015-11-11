@@ -1,6 +1,7 @@
 (function (module) {
     module.controller('HomeController', function ($scope, $modal) {
         //TODO-Lara: Figure out how to do a file count for solutions
+        //TODO-Lara: ADD UNIT TESTS
         var totalSolutions = 10;
         $scope.solutionList = [];
 
@@ -10,13 +11,16 @@
 
         $scope.open = function (solutionId) {
             var solutionData = {};
+            $scope.loading = true;
 
-            //TODO-Lara: Add loading animation between button press and modal opening
+            //TODO-Lara: Move Loading animation to better location
             $.getScript("../assets/solutions/" + solutionId + ".js", function (data) {
                 solutionData.id = solutionId;
                 solutionData.code = data;
                 solutionData.answer = solution();
             }).then(function () {
+                $scope.loading = false;
+
                 $modal.open({
                     templateUrl: 'modalInstance/modalInstance.tpl.html',
                     controller: 'ModalInstanceCtrl',

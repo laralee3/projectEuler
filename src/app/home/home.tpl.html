@@ -2,11 +2,12 @@
     <h1>Project Euler Solutions</h1>
 
     <p class="highlight">My answers to the puzzles at <a href="https://projecteuler.net/">Project Euler</a>, written in
-        Javascript.</p>
+        Javascript. <span ng-if="loading" class="glyphicon glyphicon-hourglass">   Loading...</span></p>
 
     <p>
-        <button class="btn btn-primary euler-button" ng-repeat="solution in solutionList" ng-click="open(solution)">{{
-            solution }}
+        <button class="btn btn-primary euler-button"
+                ng-repeat="solution in solutionList"
+                ng-click="open(solution)">{{ solution }}
         </button>
     </p>
 </div>
