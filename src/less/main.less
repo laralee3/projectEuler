@@ -14,14 +14,19 @@ body {
   }
 
   .loading-indicator {
+    color: lighten(@color2, 15%);
     display: inline-block;
   }
 
-  .euler-button {
-    background-color: @color4;
-    color: @color1;
-    border-color: @color3;
-    margin: 2px;
+  .solution-buttons {
+    margin-top: 10px;
+
+    .euler-button {
+      background-color: @color4;
+      color: @color1;
+      border-color: @color3;
+      margin: 2px;
+    }
   }
 
   .modal-content {

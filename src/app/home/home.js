@@ -4,6 +4,7 @@
         //TODO-Lara: ADD UNIT TESTS
         var totalSolutions = 13;
         $scope.solutionList = [];
+        $scope.loading = false;
 
         for (var i = 1; i <= totalSolutions; i++) {
             $scope.solutionList.push('eulerId' + _.padLeft(i, 4, '0'));
