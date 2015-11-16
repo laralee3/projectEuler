@@ -2,13 +2,16 @@
     module.controller('HomeController', function ($scope, $modal) {
         //TODO-Lara: Figure out how to do a file count for solutions
         //TODO-Lara: ADD UNIT TESTS
-        var totalSolutions = 13;
+        var totalSolutions = 14;
         $scope.solutionList = [];
         $scope.loading = false;
 
         for (var i = 1; i <= totalSolutions; i++) {
             $scope.solutionList.push('eulerId' + _.padLeft(i, 4, '0'));
         }
+
+        //TODO-Lara: Figure out why loading indicator isn't showing on first click
+        //TODO-Lara: Add runtime
 
         $scope.open = function (solutionId) {
             var solutionData = {};
