@@ -3,6 +3,7 @@
         //TODO-Lara: Figure out how to do a file count for solutions
         //TODO-Lara: ADD UNIT TESTS
         var totalSolutions = 14;
+        var scriptStart, scriptEnd;
         $scope.solutionList = [];
         $scope.loading = false;
 
@@ -16,12 +17,17 @@
         $scope.open = function (solutionId) {
             var solutionData = {};
             $scope.loading = true;
+            scriptStart = performance.now();
 
             //TODO-Lara: Move Loading animation to better location
             $.getScript("../assets/solutions/" + solutionId + ".js", function (data) {
                 solutionData.id = solutionId;
                 solutionData.code = data;
                 solutionData.answer = solution();
+
+                scriptEnd = performance.now();
+
+                solutionData.runTime = Math.round(scriptEnd - scriptStart);
             }).then(function () {
                 $scope.loading = false;
 
