@@ -15,11 +15,12 @@
         //TODO-Lara: Add runtime
 
         $scope.open = function (solutionId) {
-            var solutionData = {};
             $scope.loading = true;
+
+            var solutionData = {};
             scriptStart = performance.now();
 
-            //TODO-Lara: Move Loading animation to better location
+            //TODO-Lara: Fix reliability of loading animationAdd
             $.getScript("../assets/solutions/" + solutionId + ".js", function (data) {
                 solutionData.id = solutionId;
                 solutionData.code = data;

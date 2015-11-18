@@ -1,5 +1,6 @@
 @import '../../vendor/bootstrap/less/bootstrap.less';
 @import 'variables.less';
+@import 'animations.less';
 @import '../app/home/home.less';
 @import '../common/modalInstance/modalInstance.less';
 @import '../assets/prism/prism.css';
@@ -14,7 +15,9 @@ body {
   }
 
   .loading-indicator {
-    color: lighten(@color2, 15%);
+    .pulse(pulse_animation);
+
+    color: darken(@color1, 15%);
     display: inline-block;
   }
 
@@ -44,3 +47,5 @@ body {
     }
   }
 }
+
+
