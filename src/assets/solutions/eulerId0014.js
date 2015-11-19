@@ -14,6 +14,7 @@ var solution = function () {
     var i, chainLength, chainNumber, evenResult, oddResult;
 
     // Generate array of starting numbers from 1 to limit - 1
+    // ECMAScript 6 has Array.prototype.fill, which would do this for us
     for (i = 0; i < limit; i++) {
         startingNumbers[i] = true; // array position is the starting number
     }
