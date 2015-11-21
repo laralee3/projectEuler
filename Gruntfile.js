@@ -637,7 +637,7 @@ module.exports = function(grunt) {
             },
             pages: {
                 options: {
-                    remote: 'git@github.com:laralee3/projectEuler.git',
+                    remote: 'https://github.com/laralee3/projectEuler.git',
                     branch: 'gh-pages'
                 }
             }
