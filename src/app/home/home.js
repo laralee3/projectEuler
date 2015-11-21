@@ -1,5 +1,5 @@
 (function (module) {
-    module.controller('HomeController', function ($scope, $modal) {
+    module.controller('HomeController', ['$scope', '$modal', function ($scope, $modal) {
         //TODO-Lara: Figure out how to do a file count for solutions
         //TODO-Lara: ADD UNIT TESTS
         var totalSolutions = 17;
@@ -44,5 +44,5 @@
                 });
             });
         };
-    });
+    }]);
 }(angular.module("projectEuler.home")));
