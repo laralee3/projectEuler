@@ -1,13 +1,6 @@
-// Not the most optimal generic solution. Taking integer length
-// using integer.toString().length could reduce lines of code for
-// just a bit more logic.
-//
 // The ones place calculation returns 0 for every 10 places, which
 // is pushed into the sumArray as undefined. When the join() is
 // performed, undefined will go away. This can probably be done better.
-//
-// I will also optimize the logic to determine how the words are added.
-// Certainly the logic for xx1-x20 can be split out.
 
 var solution = function () {
     var numberWords = {
@@ -42,49 +35,64 @@ var solution = function () {
         1000: 'thousand'
     };
 
-    var grabHundredsPlace = function (product) {
-        return Math.floor(product / 100);
+
+    var grabHundredsPlace = function (num) {
+        return Math.floor(num / 100);
     };
 
-    var grabTensPlace = function (product) {
-        return Math.floor(product / 10);
+    var grabTensPlace = function (num) {
+        return Math.floor(num / 10);
     };
 
-    var grabOnesPlace = function (product, divisor) {
-        return (product % divisor);
+    var grabOnesPlace = function (num) {
+        return (num % 10);
+    };
+
+    var reduceHundreds = function (num) {
+        // Run this to check if num is 3 digits
+        if (num.toString().length == 3) {
+            return num % 100; // strip hundreds place
+        } else {
+            return num;
+        }
+    };
+
+    var addTwentyUpToNinetyNineToArray = function (num) {
+        sumArray.push(numberWords[grabTensPlace(reduceHundreds(num)) * 10]);
+        sumArray.push(numberWords[grabOnesPlace(reduceHundreds(num))]);
+    };
+
+    var addHundredsToArray = function (num) {
+        sumArray.push(numberWords[grabHundredsPlace(num)]);
+        sumArray.push(numberWords[100]);
     };
 
     var limit = 1000;
     var sumArray = [];
     var i, sumString;
 
+    // Adds words for 1-999
     for (i = 1; i < limit; i++) {
-        if (i <= 20) {
+        if (i <= 20) { // 1-20
             sumArray.push(numberWords[i]);
-        } else if (i >= 21 && i <= 99) {
-            sumArray.push(numberWords[grabTensPlace(i) * 10]);
-            sumArray.push(numberWords[grabOnesPlace(i, 10)]);
-        } else {
-            if (i % 100 == 0) {
-                sumArray.push(numberWords[grabHundredsPlace(i)]);
-                sumArray.push(numberWords[100]);
-            } else if (i % 100 <= 20) {
-                sumArray.push(numberWords[grabHundredsPlace(i)]);
-                sumArray.push(numberWords[100]);
+        } else if (i >= 21 && i <= 99) { // 21-99
+            addTwentyUpToNinetyNineToArray(i);
+        } else { // 100-999
+            if (i % 100 == 0) { // x00s
+                addHundredsToArray(i);
+            } else if (i % 100 <= 20) { // x01-x20
+                addHundredsToArray(i);
                 sumArray.push('and');
                 sumArray.push(numberWords[i % 100]);
-            } else {
-                sumArray.push(numberWords[grabHundredsPlace(i)]);
-                sumArray.push(numberWords[100]);
+            } else { // x21-x99
+                addHundredsToArray(i);
                 sumArray.push('and');
-                sumArray.push(numberWords[grabTensPlace(i % 100) * 10]);
-                sumArray.push(numberWords[grabOnesPlace(i % 100, 10)]);
+                addTwentyUpToNinetyNineToArray(i);
             }
         }
     }
-    sumArray.push(numberWords[1]);
-    sumArray.push(numberWords[1000]);
-    sumString = sumArray.join('');
+    sumArray.push(numberWords[1], numberWords[1000]); // Adds words for 1000
+    sumString = sumArray.join(''); // Joins array to allow character count
 
     return sumString.length;
 };
