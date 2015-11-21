@@ -21,7 +21,7 @@
             scriptStart = performance.now();
 
             //TODO-Lara: Fix reliability of loading animationAdd
-            $.getScript("../assets/solutions/" + solutionId + ".js", function (data) {
+            $.getScript("assets/solutions/" + solutionId + ".js", function (data) {
                 solutionData.id = solutionId;
                 solutionData.code = data;
                 solutionData.answer = solution();
