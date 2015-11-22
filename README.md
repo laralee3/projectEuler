@@ -2,7 +2,7 @@ Simple site that runs and outputs both the answer and the code for a number of d
 
 Puzzles referenced here can be found at https://projecteuler.net/
 
-Instance running on github pages at http://laralee3.github.io/projectEuler
+Instance running on github pages at http://laralee3.github.io/projectEuler, using grunt-build-control to deploy a build directly to gh-pages branch.
 
 1. Clone
 2. Run npm install
