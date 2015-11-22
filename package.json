@@ -5,6 +5,7 @@
   "test": "projectEuler",
   "devDependencies": {
     "grunt": "~0.4.2",
+    "grunt-build-control": "^0.6.1",
     "grunt-coffeelint": "0.0.10",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-coffee": "^0.10.1",

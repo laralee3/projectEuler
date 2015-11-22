@@ -18,6 +18,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('grunt-express');
+    grunt.loadNpmTasks('grunt-build-control');
 
     /** ********************************************************************************* */
     /** **************************** File Config **************************************** */
@@ -624,6 +625,20 @@ module.exports = function(grunt) {
                 tasks: [ 'coffeelint:test', 'karma:unit:run' ],
                 options: {
                     livereload: false
+                }
+            }
+        },
+        buildcontrol: {
+            options: {
+                dir: 'build',
+                commit: true,
+                push: true,
+                message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+            },
+            pages: {
+                options: {
+                    remote: 'https://github.com/laralee3/projectEuler.git',
+                    branch: 'gh-pages'
                 }
             }
         }
