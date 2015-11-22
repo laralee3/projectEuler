@@ -37,7 +37,9 @@ var solution = function () {
         currentRow = triangle.length - 1;
 
         for (i = 0; i < triangle[currentRow].length; i++) {
-            triangle[currentRow][i] = highestOfLocalTriangle(popped.slice(i, i + 2), triangle[currentRow][i]);
+            triangle[currentRow][i] = highestOfLocalTriangle(
+                popped.slice(i, i + 2), triangle[currentRow][i]
+            );
         }
     }
 
