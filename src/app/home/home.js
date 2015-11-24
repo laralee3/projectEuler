@@ -11,7 +11,6 @@
             $scope.solutionList.push('eulerId' + _.padLeft(i, 4, '0'));
         }
 
-
         $scope.open = function (solutionId) {
             $scope.loading = true;
 
