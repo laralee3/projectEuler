@@ -2,7 +2,7 @@
     module.controller('HomeController', ['$scope', '$modal', function ($scope, $modal) {
         //TODO-Lara: Figure out how to do a file count for solutions
         //TODO-Lara: ADD UNIT TESTS
-        var totalSolutions = 19;
+        var totalSolutions = 20;
         var scriptStart, scriptEnd;
         $scope.solutionList = [];
         $scope.loading = false;
