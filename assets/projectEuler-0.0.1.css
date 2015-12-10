@@ -6823,6 +6823,9 @@ body .loading-indicator {
 }
 body .solution-buttons {
   margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 body .solution-buttons .euler-button {
   background-color: #3a4149;
@@ -6839,4 +6842,7 @@ body .modal-content .modal-title {
 body .modal-content .modal-body h3 {
   color: #912f0c;
   margin-top: 0;
+}
+footer {
+  margin-top: 20px;
 }
